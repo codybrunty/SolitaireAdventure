@@ -436,7 +436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0300a9ab6ce1a9e43b60ed167730359a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oOutOfPlayPosition: {fileID: 691539031}
   m_oAllCards:
   - {fileID: 1288474738}
   - {fileID: 1294789630}
@@ -492,6 +491,20 @@ MonoBehaviour:
   - {fileID: 1201695316}
   m_oDeckPosition: {fileID: 460823908}
   m_oDeck: []
+  m_oPlayingField_0: []
+  m_oPlayingFieldPosition_0: {fileID: 627082053}
+  m_oPlayingField_1: []
+  m_oPlayingFieldPosition_1: {fileID: 549305351}
+  m_oPlayingField_2: []
+  m_oPlayingFieldPosition_2: {fileID: 392273631}
+  m_oPlayingField_3: []
+  m_oPlayingFieldPosition_3: {fileID: 189165363}
+  m_oPlayingField_4: []
+  m_oPlayingFieldPosition_4: {fileID: 637247393}
+  m_oPlayingField_5: []
+  m_oPlayingFieldPosition_5: {fileID: 1016984651}
+  m_oPlayingField_6: []
+  m_oPlayingFieldPosition_6: {fileID: 1733606333}
 --- !u!1001 &184057317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2062,7 +2075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691539031}
   m_Layer: 0
-  m_Name: OutOfPlay
+  m_Name: AllCards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2076,7 +2089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691539030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1288474737}
