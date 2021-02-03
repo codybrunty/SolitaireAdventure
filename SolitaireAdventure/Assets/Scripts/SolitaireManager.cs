@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,8 +40,6 @@ public class SolitaireManager : MonoBehaviour{
         vShuffleAllCards();
         vMoveAllCardsToDeck();
         vDealCardsIntoPlay();
-        vSetCardSortingOrders();
-        vAdjustCardPosition();
     }
 
     private void vMoveAllCardsToDeck() {
@@ -69,12 +68,26 @@ public class SolitaireManager : MonoBehaviour{
 
     }
 
-
     public void vMoveCard(SolitaireCard card, List<SolitaireCard> lst, Transform newPos) {
         vRemoveCardFromAllLists(card);
-        lst.Insert(0,card);
+        lst.Insert(0, card);
         card.transform.position = newPos.position;
         card.transform.SetParent(newPos.transform);
+        vSetCardListOffset(card, lst);
+        vSetCardSortingOrder(card, lst);
+    }
+
+    private void vSetCardListOffset(SolitaireCard card, List<SolitaireCard> lst) {
+        if (lst == m_oDeck) {
+            card.transform.position += new Vector3(0f, ((lst.Count-1) * -.005f), 0f);
+        }
+        else {
+            card.transform.position += new Vector3(0f, ((lst.Count-1) * -.25f), 0f);
+        }
+    }
+
+    private static void vSetCardSortingOrder(SolitaireCard card, List<SolitaireCard> lst) {
+        card.m_oMainSpriteRenderer.sortingOrder = lst.Count;
     }
 
     public void vRemoveCardFromAllLists(SolitaireCard card) {
@@ -123,47 +136,5 @@ public class SolitaireManager : MonoBehaviour{
     }
 #endregion
 
-    #region Set Sorting Order
-    public void vSetCardSortingOrders() {
-        vSortList(m_oDeck);
-        vSortList(m_oPlayingField_0);
-        vSortList(m_oPlayingField_1);
-        vSortList(m_oPlayingField_2);
-        vSortList(m_oPlayingField_3);
-        vSortList(m_oPlayingField_4);
-        vSortList(m_oPlayingField_5);
-        vSortList(m_oPlayingField_6);
-    }
-
-    private void vSortList(List<SolitaireCard> lst) {
-        int maxSortingOrderNumber = lst.Count;
-        
-        for (int i = 0; i < lst.Count; i++) {
-            lst[i].m_oMainSpriteRenderer.sortingOrder = maxSortingOrderNumber;
-            maxSortingOrderNumber--;
-        }
-    }
-    #endregion
-
-    #region Adjust Card Display Positions
-    public void vAdjustCardPosition() {
-        vAdjustPositions(m_oPlayingField_0);
-        vAdjustPositions(m_oPlayingField_1);
-        vAdjustPositions(m_oPlayingField_2);
-        vAdjustPositions(m_oPlayingField_3);
-        vAdjustPositions(m_oPlayingField_4);
-        vAdjustPositions(m_oPlayingField_5);
-        vAdjustPositions(m_oPlayingField_6);
-    }
-    private void vAdjustPositions(List<SolitaireCard> lst) {
-        float adjustedY = 0f;
-        float increment = -.25f;
-
-        for (int i = lst.Count-1; i >= 0; i--) {
-            lst[i].transform.position += new Vector3(0f, adjustedY, 0f);
-            adjustedY += increment;
-        }
-    }
-    #endregion
 
 }

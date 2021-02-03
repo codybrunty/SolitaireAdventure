@@ -79,7 +79,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &4383321761140759077
@@ -98,6 +98,6 @@ MonoBehaviour:
   m_oSuit: 0
   m_oValue: 0
   m_oMainSpriteRenderer: {fileID: 4383321761140759076}
-  m_oCardFrontSprite: {fileID: 21300000, guid: 210946753a34a5544a2efd3ff53620ee, type: 3}
-  m_oCardBackSprite: {fileID: 21300000, guid: 21ab2a8ff734387498305b949c23021a, type: 3}
+  m_oCardFrontSprite: {fileID: 21300000, guid: 2a1c4a8911328374ea29a2ff3e0911dd, type: 3}
+  m_oCardBackSprite: {fileID: 21300000, guid: 79f9ae8d40dcac34d9c082c0fc9cf7bd, type: 3}
   isHidden: 0
